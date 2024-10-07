@@ -4,7 +4,11 @@ const port = process.env.port || 5000
 const cors = require('cors')
 
 //middleware
-app.use(cors());
+app.use(cors(
+  {
+    origin:"https://chatbot-2gab.vercel.app/"
+  }
+));
 app.use(express.json());
 
 app.get('/', (req, res) => {
